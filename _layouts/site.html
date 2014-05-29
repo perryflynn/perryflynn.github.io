@@ -1,0 +1,17 @@
+---
+layout: base_jekyll
+footline: By Christian Blechert
+---
+
+<fieldset><legend>Content Overview</legend>
+<ul>
+{% for ipage in site.pages %}
+   {% if ipage.showinnavigation == true %}
+      <li><a href="/mysimpledesign{{ipage.url}}">{{ ipage.title }}</a></li>
+   {% endif %}
+{% endfor %}
+</ul>
+</fieldset>
+
+{{ content }}
+

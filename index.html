@@ -1,1 +1,14 @@
-<h1>Hello World</h1>
+---
+layout: site
+title: My github projects
+headline: My github projects
+showinnavigation: true
+---
+
+{% for repo in site.github.public_repositories %}
+
+<h1>{{repo.name}}</h1>
+<p>{{repo.description}}</p>
+
+{% endfor %}
+

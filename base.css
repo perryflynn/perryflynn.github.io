@@ -1,0 +1,514 @@
+
+/*
+ Base stylesheet for mysimpledesign by Christian Blechert
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Gudea:400,700);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
+
+
+/* Basic Tag Styles */
+
+body {
+   text-align:center;
+   margin:0px;
+   padding:0px;
+   font-size:12pt;
+}
+
+h1, h2, h3, h4 {
+   font-family:Gudea;
+}
+
+h1 img, h1 span.text, h2 img, h2 span.text, h3 img, h3 span.text, h4 img, h4 span.text {
+   vertical-align:middle;
+}
+
+h1 a, h2 a, h3 a, h4 a {
+   background-image:none!important;
+   padding-right:0px!important;
+}
+
+h1 {
+   font-size:200%;
+   margin:20px 0px;
+}
+
+h2 {
+   font-size:175%;
+   margin:20px 0px;
+}
+
+h3 {
+   font-size:150%;
+   margin:20px 0px 0px 0px;
+}
+
+h4 {
+   font-size:125%;
+   margin:20px 0px 0px 0px;
+}
+
+body, p, div {
+   font-family:Ubuntu;
+}
+
+input, textarea {
+   font-family:'Ubuntu Mono', Monospace;
+}
+
+p {
+  text-align:justify;
+}
+
+hr {
+  border:0px;
+  margin:0px;
+  padding:0px;
+  height:1px;
+  background-color:#4d90fe;
+}
+
+
+
+/* Hyperlinks */
+
+a {
+   color:#4d90fe;
+   text-decoration:underline;
+   background: transparent no-repeat right center;
+}
+
+p a {
+   padding-right:12px;
+   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpi/P//PwM6SJt5AkWQEZsidMUs6LpmpVswwhSA2CCaBVkCKskPpB4iizGkzjj+H2QlCAPZ/ED8AcaHYRRFyBhZnImBCECUIhZs4YIOAAIMAM+kUfk9b0RaAAAAAElFTkSuQmCC);
+}
+
+a[target=_blank] {
+   padding-right:16px;
+   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAYAAABLcGxfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFVJREFUeNpi/P//PwMMpM08geBgBwJMDCQCFnSBWekWjNgUAm3/ANZAhDNQAMhJH0Fuw2UyNg0MpNpAmacJ+YkFXwhBQ0YeKP6RYid9AJpGlAaAAAMAx2IanJ0wsjgAAAAASUVORK5CYII=);
+}
+
+a:hover, a:active {
+   color:#ffae00;
+   border:0px none;
+   text-decoration:none;
+}
+
+p a:hover, p a:active {
+   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFBJREFUeNpi/P//PwM6+HlUG0WQEZsidMWMP45ooahit77KCFMAYoMVghSBTINhIJ8fiD8g8VEVoSuAYQyTkE2AsZkYiABEKcLwHTafAgQYAPP/aI6p9drlAAAAAElFTkSuQmCC);
+}
+
+p a[target=_blank]:hover, p a[target=_blank]:active {
+   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAYAAABLcGxfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFVJREFUeNpi/P//PwMM/DyqjeBgBwJMDCQCFnQBduurjNgUAm3/ANZAhDNQAMhJH0Fuw2UyNg0MpNpAmacJ+YkFXwhBQ0YeKP6RYid9AJpGlAaAAAMAICUa4AT2fpQAAAAASUVORK5CYII=);
+}
+
+
+
+/* Bullet Lists */
+
+ul {
+  list-style:none;
+  margin:10px 0px 10px 0px;
+  padding:0px;
+}
+
+ul ul {
+   padding-left:10px;
+}
+
+ul li {
+   margin-left:15px;
+}
+
+ul li::before {
+   color:#4d90fe;
+   font-weight:bold;
+   padding-right:5px;
+   content: "• ";
+   margin-left:-15px;
+}
+
+
+
+/* Numbered list */
+/* Counter is configured up to 5 levels */
+
+ol {
+  list-style:none;
+  margin:10px 0px 10px 0px;
+  padding:0px;
+  counter-reset:numlistone;
+}
+
+ol ol {
+   padding-left:20px;
+}
+
+ol li::before {
+   color:#4d90fe;
+   font-weight:bold;
+}
+
+ol > li::before {
+   counter-increment:numlistone;
+   content:counter(numlistone) ". ";
+}
+
+ol > li > ol {
+   counter-reset:numlisttwo;
+}
+
+ol > li > ol > li::before {
+   counter-increment:numlisttwo;
+   content:counter(numlistone) "." counter(numlisttwo) ". ";
+}
+
+ol > li > ol > li > ol {
+   counter-reset:numlistthree;
+}
+
+ol > li > ol > li > ol > li::before {
+   counter-increment:numlistthree;
+   content:counter(numlistone) "." counter(numlisttwo) "." counter(numlistthree) ". ";
+}
+
+ol > li > ol > li > ol > li > ol  {
+   counter-reset:numlistfour;
+}
+
+ol > li > ol > li > ol > li > ol > li::before {
+   counter-increment:numlistfour;
+   content:counter(numlistone) "." counter(numlisttwo) "." counter(numlistthree) "." counter(numlistfour) ". ";
+}
+
+ol > li > ol > li > ol > li > ol > li > ol {
+   counter-reset:numlistfive;
+}
+
+ol > li > ol > li > ol > li > ol > li > ol > li::before {
+   counter-increment:numlistfive;
+   content:counter(numlistone) "." counter(numlisttwo) "." counter(numlistthree) "." counter(numlistfour) "." counter(numlistfive) ". ";
+}
+
+
+
+/* Code */
+
+p code {
+   border: 1px solid #4d90fe;
+   border-radius:4px;
+   padding: 1px 3px;
+   font-family:'Ubuntu Mono';
+   font-size:10pt;
+   background-color:#f8f8f8;
+}
+
+pre {
+   border: 1px solid #4d90fe;
+   border-radius:6px;
+   padding: 10px;
+   font-family:'Ubuntu Mono';
+   background-color:#f8f8f8;
+   opacity: .8;
+}
+
+pre::before {
+   content:'Code:';
+   display:block;
+   font-weight:bold;
+   padding-bottom:10px;
+   color:#4d90fe;
+   font-family:'Ubuntu Mono';
+}
+
+
+
+/* Properties */
+dl dt, dl dd {
+   margin:0px;
+   padding:0px;
+}
+
+dl dt {
+   color:#4d90fe;
+   font-weight:bold;
+}
+
+dl dd {
+   margin-bottom:10px;
+}
+
+dl dd a {
+   color:black;
+   text-decoration:none;
+}
+
+
+
+/* Tables */
+/* http://www.mediaevent.de/2012/08/html-table-border-radius-border-collapse/ */
+
+table.lines {  
+   border-radius: 6px; 
+   border-spacing: 0px; 
+   border-collapse: separate; 
+}
+
+table.lines td, 
+table.lines th {  
+   padding: 5px 12px; 
+   border-bottom: 1px solid #4d90fe; 
+   border-right: 1px solid #4d90fe; 
+   font-family:Ubuntu;
+}
+
+table.lines td {
+   font-size:.9em;
+}
+
+table.monospace td, 
+table.monospace th {
+   font-family:'Ubuntu Mono';
+}
+
+table.lines th { 
+   background: #4d90fe; 
+   color: white;
+   text-align:left;
+}
+
+table.lines tr:last-child td:first-child {
+    border-bottom-left-radius:6px;
+}
+
+table.lines tr:last-child td:last-child {
+    border-bottom-right-radius:6px;
+}
+
+table.lines tr th:first-child,
+table.lines tr td:first-child {
+   border-left: 1px solid #4d90fe;
+}
+
+table.lines tr:first-child th,
+table.lines tr:first-child td {
+   border-top: 1px solid #4d90fe;
+}
+
+table.lines tr:first-child th:first-child,
+table.lines tr:first-child td:first-child {
+    border-top-left-radius:6px
+}
+
+table.lines tr:first-child th:last-child,
+table.lines tr:first-child td:last-child {
+    border-top-right-radius:6px
+}
+
+
+
+/* Fieldset */
+
+fieldset {
+   border: 1px solid #4d90fe;
+   border-radius:6px;
+}
+
+fieldset legend {
+   border: 1px solid #4d90fe;
+   background-color:#4d90fe;
+   border-radius:4px;
+   padding:1px 2px;
+   color:white;
+}
+
+
+
+/* Figure */
+
+figure {
+   border: 1px solid #4d90fe;
+   border-radius:6px;
+   margin: 10px;
+   text-align:center;
+}
+
+figure.flow-right {
+   float:right;
+   margin-right:0px;
+   margin-top:0px;
+}
+
+figure.flow-left {
+   float:left;
+   margin-left:0px;
+   margin-top:0px;
+}
+
+figure > a {
+   background-image:none!important;
+   padding-right:0px!important;
+}
+
+figure > img, figure > a > img {
+   margin: 5px;
+}
+
+figure figcaption {
+   background-color:#4d90fe;
+   color:white;
+   text-align:center;
+   padding: 2px 10px;
+   margin:0px;
+   border-bottom-left-radius:4px;
+   border-bottom-right-radius:4px;
+}
+
+
+
+/* CSS Buttons by wachert.com */
+
+.btt {
+  display:inline-block;
+  line-height:2em;
+  padding:0 1em;
+  min-width:100px;
+  text-align:center;
+  margin:0px;
+  border-radius:0.3em;
+  border:1px solid rgba(0,0,0,.1);
+  font-family: 'Open Sans', sans-serif;
+  font-size:.9em;
+  text-decoration:none;
+  text-shadow:rgba(255,255,255,.2) 0 1px 0;
+  color:rgba(255,255,255,1);
+  -webkit-transition: all .25s;
+  background:#7f7f7f;
+}
+
+.btt:hover {
+  box-shadow:inset 0 -.7em 2em rgba(0,0,0,.2), rgba(0,0,0,.25) 0 .15em .3em;
+  text-shadow:rgba(0,0,0,.3) 0 -1px 0;
+}
+
+.btt-red { background:#d14836; }
+.btt-blue { background:#4d90fe; }
+.btt-cyan { background:#35ccc6; }
+.btt-green { background:#3fcc35; }
+.btt-lemon { background:#4bf43f; }
+.btt-orange { background:#ffae00; }
+.btt-yellow { background:#ffd800; }
+.btt-pink { background:#ce35ad; }
+.btt-purple { background:#9435cc; }
+.btt-black { background:#333; }
+.btt-grey { background:#c9c9c9; }
+
+
+
+/* Module Form Styles*/
+
+div.modform_row {
+   margin:0px 0px 10px 0px;
+}
+
+div.modform_row label {
+   color:#4d90fe;
+   line-height:20px;
+}
+
+div.modform_row input[type=text], 
+div.modform_row input[type=password], 
+div.modform_row textarea {
+   width:60%;
+   border:2px solid #4d90fe;
+   border-radius:3px;
+   padding:1px 5px;
+}
+
+div.modform_row label:hover, 
+div.modform_row label:active 
+{
+   color:#ffae00;
+}
+
+div.modform_row input[type=text]:hover, 
+div.modform_row input[type=text]:focus, 
+div.modform_row input[type=text]:active,
+div.modform_row input[type=password]:hover, 
+div.modform_row input[type=password]:focus, 
+div.modform_row input[type=password]:active,
+div.modform_row textarea:hover, 
+div.modform_row textarea:focus, 
+div.modform_row textarea:active {
+   border-color:#ffae00;
+   box-shadow:none;
+}
+
+
+
+/* Layout */
+
+div.outline {
+   margin:20px auto 20px auto;
+   text-align:left;
+   border:2px solid #4d90fe;
+   border-radius:12px;
+   width:900px;
+}
+
+div.inneroutline {
+   width:870px;
+   min-height:250px;
+   margin:15px;
+}
+
+header, footer {
+   margin:0px;
+   padding:0px;
+   background-color:#4d90fe;
+   border:2px solid #4d90fe;
+   color:white;
+   font-family:Gudea;
+}
+
+header a, footer a, header a:visited, footer a:visited {
+  color:white;
+}
+
+header {
+   font-size:22pt;
+   border-top-left-radius:9px;
+   border-top-right-radius:9px;
+}
+
+header div {
+   margin: 5px 15px;
+}
+
+footer {
+   font-size:8pt;
+   border-bottom-left-radius:9px;
+   border-bottom-right-radius:9px;
+   text-align:right;
+}
+
+footer > div {
+   margin: 3px 15px;
+}
+
+footer a {
+   color:white;
+   text-decoration:underline;
+}
+
+footer a:hover {
+   color:#ffae00;
+}
+
+
+
+/* EOF */
+
