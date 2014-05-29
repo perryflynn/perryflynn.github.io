@@ -3,3 +3,14 @@
    vertical-align:middle;
 }
 
+div.metaline {
+   display:block;
+   padding:10px 0px;
+}
+
+div.metaitem {
+   float:left;
+   text-align:middle;
+   padding-right:10px;
+}
+
