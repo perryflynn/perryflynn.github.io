@@ -9,6 +9,9 @@ showinnavigation: true
 
 <h1>{{repo.name}}</h1>
 <p>{{repo.description}}</p>
-
+<pre>git clone {{repo.clone_url}}
+git clone {{repo.git_url}}
+git clone {{repo.ssh_url}}
+svn checkout {{repo.svn_url}}</pre>
 {% endfor %}
 
