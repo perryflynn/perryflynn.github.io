@@ -28,24 +28,22 @@ showinnavigation: true
    <div style="clear:both;"></div>
 </div>
 
-<dl>
-   <dt>Repository URL</dt>
-   <dd><a href="{{repo.html_url}}" target="_blank">{{repo.html_url}}</a></dd>
-   <dt>Issues</dt>
-   <dd><a href="{{repo.html_url}}" target="_blank">{{repo.html_url}}</a></dd>
-   <dt>Releases</dt>
-   <dd><a href="{{repo.html_url}}" target="_blank">{{repo.html_url}}</a></dd>
-   <dt>ZIP Download</dt>
-   <dd><a href="{{repo.html_url}}" target="_blank">{{repo.html_url}}</a></dd>
-   <dt>TAR Download</dt>
-   <dd><a href="{{repo.html_url}}" target="_blank">{{repo.html_url}}</a></dd>
-</dl>
-
 <p>{{repo.description}}</p>
 <pre>git clone {{repo.clone_url}}
 git clone {{repo.git_url}}
 git clone {{repo.ssh_url}}
 svn checkout {{repo.svn_url}}</pre>
+
+<dl>
+   <dt>Repository URL</dt>
+   <dd><a href="{{repo.html_url}}" target="_blank">{{repo.html_url}}</a></dd>
+   <dt>Issues</dt>
+   <dd><a href="{{repo.html_url}}/issues" target="_blank">{{repo.html_url}}/issues</a></dd>
+   <dt>Releases</dt>
+   <dd><a href="{{repo.html_url}}/releases" target="_blank">{{repo.html_url}}/releases</a></dd>
+   <dt>ZIP Download</dt>
+   <dd><a href="{{repo.html_url}}/archive/master.zip" target="_blank">{{repo.html_url}}</a></dd>
+</dl>
 
 {% endfor %}
 
