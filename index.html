@@ -27,6 +27,20 @@ showinnavigation: true
    </div>
    <div style="clear:both;"></div>
 </div>
+
+<dl>
+   <dt>Repository URL</dt>
+   <dd><a href="{{repo.repository_url}}" target="_blank">{{repo.repository_url}}</a></dd>
+   <dt>Issues</dt>
+   <dd><a href="{{repo.issues_url}}" target="_blank">{{repo.issues_url}}</a></dd>
+   <dt>Releases</dt>
+   <dd><a href="{{repo.releases_url}}" target="_blank">{{repo.releases_url}}</a></dd>
+   <dt>ZIP Download</dt>
+   <dd><a href="{{repo.zip_url}}" target="_blank">{{repo.zip_url}}</a></dd>
+   <dt>TAR Download</dt>
+   <dd><a href="{{repo.tar_url}}" target="_blank">{{repo.tar_url}}</a></dd>
+</dl>
+
 <p>{{repo.description}}</p>
 <pre>git clone {{repo.clone_url}}
 git clone {{repo.git_url}}
