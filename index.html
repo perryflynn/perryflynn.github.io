@@ -19,11 +19,12 @@ showinnavigation: true
 
 {% for repo in site.github.public_repositories %}
 
+<h1 id="repo-{{repo.name}}" class="middle">{{repo.name}}</h1>
 <span style="float:right;" class="middle">
     <img src="img/arrow_up.png" alt="To top" class="middle">
     <a href="#start" class="middle">To top</a>
 </span>
-<h1 id="repo-{{repo.name}}" class="middle">{{repo.name}}</h1>
+
 <div class="metaline">
    <div class="metaitem">
       <img src="img/star.png" alt="Stargazers" title="Stargazers" class="middle">
