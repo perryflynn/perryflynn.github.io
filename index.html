@@ -5,12 +5,13 @@ headline: My github projects
 showinnavigation: true
 ---
 
-<fieldset><legend>Repositories</legend>
+<fieldset class="repolist"><legend>Repositories</legend>
 <ul>
 {% for repo in site.github.public_repositories %}
    <li><a href="#repo-{{repo.name}}" title="{{repo.description}}">{{repo.name}}</a></li>
 {% endfor %}
 </ul>
+<div style="clear:both;"></div>
 </fieldset>
 
 {% for repo in site.github.public_repositories %}
